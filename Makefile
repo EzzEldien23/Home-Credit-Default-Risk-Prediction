@@ -39,6 +39,21 @@ format:
 	ruff format
 
 
+## Run the DVC training pipeline
+.PHONY: train
+train:
+	dvc repro
+
+## Serve the FastAPI inference API
+.PHONY: serve
+serve:
+	uvicorn src.api:app --host 0.0.0.0 --port 8000
+
+## Score a model-ready CSV file
+.PHONY: predict
+predict:
+	python -m src.modeling.predict --input $(INPUT) --output $(OUTPUT)
+
 
 
 

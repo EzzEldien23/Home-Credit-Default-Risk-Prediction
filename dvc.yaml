@@ -1,0 +1,28 @@
+stages:
+  train:
+    cmd: python -m src.modeling.train --params params.yaml
+    deps:
+      - data/raw/application_train.csv
+      - data/raw/application_test.csv
+      - data/raw/bureau.csv
+      - data/raw/bureau_balance.csv
+      - data/raw/previous_application.csv
+      - data/raw/POS_CASH_balance.csv
+      - data/raw/credit_card_balance.csv
+      - data/raw/installments_payments.csv
+      - src/config.py
+      - src/data.py
+      - src/features.py
+      - src/modeling/train.py
+    params:
+      - row_limits
+      - train
+      - mlflow
+      - outputs
+    outs:
+      - models/home_credit_model.joblib
+      - models/feature_metadata.json
+      - models/submission.csv
+    metrics:
+      - reports/metrics.json:
+          cache: false

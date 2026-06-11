@@ -1,0 +1,11 @@
+.git
+.venv
+.ruff_cache
+.pytest_cache
+__pycache__
+*.pyc
+data
+notebooks/catboost_info
+notebooks/.ipynb_checkpoints
+reports
+docs/site

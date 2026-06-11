@@ -1,0 +1,36 @@
+row_limits:
+  application_train: null
+  application_test: null
+  bureau: null
+  bureau_balance: null
+  previous_application: null
+  pos_cash_balance: null
+  credit_card_balance: null
+  installments_payments: null
+  sub_model_previous_application: null
+  sub_model_bureau: null
+  sub_model_installments_payments: null
+
+train:
+  seed: 42
+  n_folds: 5
+  te_smoothing: 40
+  te_min_samples: 80
+  null_importance_runs: 5
+  null_importance_sample: 60000
+  correlation_sample: 30000
+  top_feature_count: 400
+  knn_neighbors: [200, 500]
+  lgb_seed_average_seeds: [456, 789, 1234]
+
+mlflow:
+  experiment_name: home-credit-default-risk
+  tracking_uri: null
+  dagshub_repo_owner: null
+  dagshub_repo_name: null
+
+outputs:
+  submission: models/submission.csv
+  model_artifact: models/home_credit_model.joblib
+  feature_metadata: models/feature_metadata.json
+  metrics: reports/metrics.json

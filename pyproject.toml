@@ -16,10 +16,28 @@ classifiers = [
     
 ]
 dependencies = [
+    "catboost>=1.2.10",
+    "dagshub>=0.6.3",
+    "dvc>=3.67.1",
+    "fastapi>=0.124.0",
+    "joblib>=1.5.2",
+    "lightgbm>=4.6.0",
+    "mlflow>=3.7.0",
     "mkdocs",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
     "pip",
+    "polars>=1.41.2",
+    "pydantic>=2.12.0",
+    "python-multipart>=0.0.20",
     "python-dotenv",
+    "pyyaml>=6.0.3",
     "ruff",
+    "scikit-learn>=1.7.2",
+    "scipy>=1.15.3",
+    "torch>=2.12.0",
+    "uvicorn[standard]>=0.38.0",
+    "xgboost>=3.2.0",
 ]
 requires-python = "~=3.10.0"
 
@@ -35,4 +53,3 @@ extend-select = ["I"]  # Add import sorting
 [tool.ruff.lint.isort]
 known-first-party = ["src"]
 force-sort-within-sections = true
-
